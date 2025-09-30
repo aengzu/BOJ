@@ -1,33 +1,25 @@
 #include <iostream>
+#include <string>
 #include <unordered_map>
 #include <algorithm>
+using namespace std;
 
-/// z z a b k c a
 class Solution {
 public:
-    int lengthOfLongestSubstring(string s) {
-        int answer = (s.size()>0 ? 1 : 0);
-        int nowLen = 0;
-        unordered_map<char, int> hmap;
-        for (int i=0; i<s.size(); i++) {
-            char c = s[i];
-            if (hmap.count(c)) {
-                nowLen = 0;
-                int sIdx = hmap[c]+1;
-                hmap.clear();
-                //전체 클리어말고 그러면 해당 인덱스 전에 잇ㅇ는 녀석들 삭제는?
-                for (int j=sIdx; j<i; j++) {
-                    hmap[s[j]] = j;
-                    nowLen++;
-                }
-            }
-                
-            hmap.insert({c, i});
-            nowLen++;
-            answer = max(answer, nowLen);
-        }
+    int lengthOfLongestSubstring(const string& s) {
+        unordered_map<char, int> last; // 문자 -> 마지막 인덱스
+        int start = 0;                  // 윈도우 왼쪽
+        int ans = 0;
 
-        answer = max(answer, nowLen);
-        return answer;
+        for (int i = 0; i < (int)s.size(); ++i) {
+            char c = s[i];
+            if (last.count(c)) {
+                // start는 뒤로만 이동해야 함
+                start = max(start, last[c] + 1);
+            }
+            ans = max(ans, i - start + 1);
+            last[c] = i; // 현재 위치로 갱신
+        }
+        return ans;
     }
 };
