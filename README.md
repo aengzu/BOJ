@@ -1,4 +1,4 @@
-# Algorithms (Baekjoon, Programmers, LeetCode)
+# Algorithms (Baekjoon, LeetCode, Programmers)
 
 C++, Python, MySQL
 
