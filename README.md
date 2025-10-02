@@ -1,9 +1,15 @@
-# 코딩테스트 (Baekjoon, Programmers)
+# Algorithms (Baekjoon, Programmers, LeetCode)
 
-PYTHON, C++, MySQL
+C++, Python, MySQL
+
+
+# BOJ Profile
 
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=dudwn0005)](https://solved.ac/dudwn0005/)
 
+
+# LeetCode Profile
+![LeetCode Stats](https://leetcard.jacoblin.cool/aengzu?theme=unicorn&font=Zen%20Antique%20Soft&ext=activity)
 
 <!---LeetCode Topics Start-->
 # LeetCode Topics
